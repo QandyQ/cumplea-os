@@ -17,14 +17,10 @@ setInterval(createFallingImage, 500);
 
 window.addEventListener('load', () => {
     const audio = document.getElementById('background-audio');
-    audio.play().catch((error) => {
+    audio.volume = 1.0; // Asegúrate de que el volumen esté al máximo
+    audio.play().then(() => {
+        console.log('Audio reproducido correctamente');
+    }).catch((error) => {
         console.log('El audio no se pudo reproducir automáticamente:', error);
-    });
-});
-
-document.getElementById('play-audio').addEventListener('click', () => {
-    const audio = document.getElementById('background-audio');
-    audio.play().catch((error) => {
-        console.log('Error al reproducir el audio:', error);
     });
 });

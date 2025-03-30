@@ -21,3 +21,10 @@ window.addEventListener('load', () => {
         console.log('El audio no se pudo reproducir automáticamente:', error);
     });
 });
+
+document.getElementById('play-audio').addEventListener('click', () => {
+    const audio = document.getElementById('background-audio');
+    audio.play().catch((error) => {
+        console.log('Error al reproducir el audio:', error);
+    });
+});
